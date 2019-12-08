@@ -1,1 +1,21 @@
+<!DOCTYPE HTML>
 
+<html>
+    <head>
+        <title>Flask IO Test App</title>
+        {% block script %} {% endblock %}
+    </head>
+    <body>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for ms in messages %}
+                <li>{{ ms }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content%} {% endblock %}
+    </body>
+</html>
