@@ -33,7 +33,7 @@ or cmd:
 (venv) > pip install flask
 (venv) > pip install flask_socketio
 ```
-### 2) Starting up the server
+### 3) Starting up the server
 From the terminal, execute
 ```bash
 (venv) $ flask run
