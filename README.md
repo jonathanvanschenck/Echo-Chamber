@@ -21,7 +21,7 @@ or cmd:
 > venv\Scripts\activate
 (venv) > 
 ```
-### 2) Setup the virtual environment to run flask
+### 2) Set up the virtual environment to run flask
 Next, use pip to install flask and the required dependances: flask, flask_socketio
 e.g. on bash
 ```bash
