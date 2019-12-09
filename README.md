@@ -42,4 +42,4 @@ or in cmd
 ```cmd
 (venv) > flask run
 ```
-The current setup is "local" which will run the server only on your computer, accessable at http://localhost:5000/ 
+The current setup is "local" which will run the server only on your computer, accessable at http://localhost:5000/ . You can check the flask documentation for more details on how to run the server on a network https://flask.palletsprojects.com/en/1.1.x/ .
