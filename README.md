@@ -14,23 +14,32 @@ or on windows cmd
 Next, activate the virtual environment from the terminal, in bash:
 ```bash
 $ ./venv/bin/activate
+(venv) $ 
 ```
 or cmd:
 ```cmd
 > venv\Scripts\activate
+(venv) > 
 ```
+### 2) Setup the virtual environment to run flask
 Next, use pip to install flask and the required dependances: flask, flask_socketio
 e.g. on bash
 ```bash
-$ pip3 install flask
+(venv) $ pip3 install flask
+(venv) $ pip3 install flask_socketio
 ```
 or cmd:
 ```cmd
-> pip install flask
+(venv) > pip install flask
+(venv) > pip install flask_socketio
 ```
 ### 2) Starting up the server
-From the terminal, activate the python virtual environment, then execute
+From the terminal, execute
 ```bash
 (venv) $ flask run
+```
+or in cmd
+```cmd
+(venv) > flask run
 ```
 The current setup is "local" which will run the server only on your computer, accessable at http://localhost:5000/ 
