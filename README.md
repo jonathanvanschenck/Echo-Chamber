@@ -25,21 +25,15 @@ or cmd:
 Next, use pip to install flask and the required dependances: flask, flask_socketio
 e.g. on bash
 ```bash
-(venv) $ pip3 install flask
-(venv) $ pip3 install flask_socketio
+(venv) $ pip3 install -r requirements.txt
 ```
 or cmd:
 ```cmd
-(venv) > pip install flask
-(venv) > pip install flask_socketio
+(venv) > pip install -r requirements.txt
 ```
 ### 3) Starting up the server
 From the terminal, execute
 ```bash
-(venv) $ flask run
+(venv) $ gunicorn wsgi --worker-class gevent -w 1 --bind localhost:8000 --reload
 ```
-or in cmd
-```cmd
-(venv) > flask run
-```
-The current setup is "local" which will run the server only on your computer, accessable at http://localhost:5000/ . You can check the flask documentation for more details on how to run the server on a network https://flask.palletsprojects.com/en/1.1.x/ .
+The current setup is "local" which will run the server only on your computer, accessable at http://localhost:8000/ . You can check the flask documentation for more details on how to run the server on a network https://flask.palletsprojects.com/en/1.1.x/ .
