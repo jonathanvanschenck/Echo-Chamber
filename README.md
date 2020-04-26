@@ -14,12 +14,12 @@ or on windows cmd
 Next, activate the virtual environment from the terminal, in bash:
 ```bash
 $ ./venv/bin/activate
-(venv) $ 
+(venv) $
 ```
 or cmd:
 ```cmd
 > venv\Scripts\activate
-(venv) > 
+(venv) >
 ```
 ### 2) Set up the virtual environment to run flask
 Next, use pip to install flask and the required dependances: flask, flask_socketio
@@ -37,3 +37,11 @@ From the terminal, execute
 (venv) $ gunicorn wsgi --worker-class gevent -w 1 --bind localhost:8000 --reload
 ```
 The current setup is "local" which will run the server only on your computer, accessable at http://localhost:8000/ . You can check the flask documentation for more details on how to run the server on a network https://flask.palletsprojects.com/en/1.1.x/ .
+
+## Docker
+If you are set up with docker, then do this:
+```bash
+ $ sudo docker-compose build
+ $ sudo docker-compose up
+```
+Then, we are accessable from http://localhost:8000/
