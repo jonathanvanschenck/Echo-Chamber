@@ -1,15 +1,34 @@
 version: '3.7'
 
 services:
-  web:
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
     restart: always
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    command: gunicorn wsgi --worker-class gevent -w 1 --bind 0.0.0.0:8000 --reload
+    networks:
+      - my-network
+    # Get the static files from the flask folder so that
+    #  nginx can serve them directly
+    #   (files on your computer):(file location in nginx container)
     volumes:
-      - ./:/usr/src/app/
+      - ./flask/app/static:/static
+    ports:
+      - "80:80"
+
+  flask:
+    restart: always
+    build: ./flask
+    container_name: flask
     expose:
       - "8000"
-    ports:
-      - "8000:8000"
+    # Gunicorn must bind to the "external" port of the container, so that
+    #  the nginx container can access it for forwarding
+    command: gunicorn wsgi --worker-class gevent --bind 0.0.0.0:8000
+    networks:
+      my-network:
+        aliases:
+          - flask-app
+
+networks:
+  my-network:
